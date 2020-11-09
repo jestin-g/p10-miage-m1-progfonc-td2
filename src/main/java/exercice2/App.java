@@ -14,6 +14,9 @@ public class App {
         Predicate<Pair<Integer, Double>> tailleIncorrecte = tailleTropPetite.or(tailleTropGrande);
         Predicate<Pair<Integer, Double>> tailleCorrecte = (tailleTropPetite.and(tailleTropGrande)).negate();
 
+        //Predicate<Pair<Integer, Double>> accesAutorise = tailleCorrecte.and()
+
+
         /* Création personnes */
         Pair<Integer, Double> simba = new Pair<>(90, 1.0);
         Pair<Integer, Double> mufasa = new Pair<>(210, 100.0);
