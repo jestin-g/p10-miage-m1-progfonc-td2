@@ -1,5 +1,7 @@
 package exercice1;
 
+import java.util.List;
+
 public class App {
 
     public static void question1() {
@@ -33,9 +35,25 @@ public class App {
         String mot1 = "Hello";
         String mot2 = "World";
         System.out.println("String: " + stringSomme.somme(mot1, mot2));
+
+        System.out.println();
+    }
+
+    public static void question2() {
+        System.out.println("-Question 2");
+
+        ToString<List<String>> listToString = premier -> {
+            StringBuilder sb = new StringBuilder();
+            for(String s : premier){
+                sb.append(s);
+            }
+            return sb.toString();
+        };
+
     }
 
     public static void main(String[] args) {
         App.question1();
+        App.question2();
     }
 }
