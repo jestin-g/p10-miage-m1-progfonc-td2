@@ -1,5 +1,6 @@
 package exercice1;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class App {
@@ -49,7 +50,6 @@ public class App {
             }
             return sb.toString();
         };
-
     }
 
     public static void main(String[] args) {
