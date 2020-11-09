@@ -11,15 +11,14 @@ public class App {
         Predicate<Pair<Integer, Double>> poidsTropLourd = pair -> pair.second > 150.0;
         //Predicate<Pair<Integer, Double>> poidsCorrecte = ;
 
-
-
+        Predicate<Pair<Integer, Double>> tailleIncorrecte = tailleTropPetite.or(tailleTropGrande);
+        Predicate<Pair<Integer, Double>> tailleCorrecte = (tailleTropPetite.and(tailleTropGrande)).negate();
 
         /* Création personnes */
-
         Pair<Integer, Double> simba = new Pair<>(90, 1.0);
         Pair<Integer, Double> mufasa = new Pair<>(210, 100.0);
         Pair<Integer, Double> pumba = new Pair<>(110, 200.0);
-        Pair<Integer, Double> timon = new Pair<>(90, 50.0);
+        Pair<Integer, Double> timon = new Pair<>(101, 50.0);
 
 
         /* Tests tailleTropPetite */
@@ -38,6 +37,9 @@ public class App {
         System.out.println("Mufasa a une taille incorrecte: " + tailleIncorrecte.test(mufasa));
         System.out.println("Simba a une taille incorrecte: " + tailleIncorrecte.test(simba));
 
+        /* Tests tailleIncorrecte */
+        System.out.println("Pumba a une taille correcte: " + tailleCorrecte.test(mufasa));
+        System.out.println("Timon a une taille correcte: " + tailleCorrecte.test(simba));
 
     }
 
